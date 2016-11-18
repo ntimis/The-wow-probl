@@ -16,11 +16,9 @@ public class RaidMethods {
     public void calculateRaidSize(int raidSize) {
         System.out.println("Calculating raid size for your selection:");
         int tankNr = 1;
-        if (raidSize == 5) {
-            tankNr = 1;
-        } else {
+        if (raidSize > 5) {
             tankNr = 2;
-        }
+        } 
         System.out.println("number of tanks is: " + tankNr);
         int healerNr = raidSize / 5;
         System.out.println("number of healers is: " + healerNr);
