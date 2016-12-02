@@ -4,12 +4,7 @@
 
 import classes.Hero;
 import classes.RaidMethods;
-import java.io.File;
-
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.util.Scanner;
-import java.util.logging.Logger;
 
 public class Composition {
     public static void main(String[] args) {
@@ -28,12 +23,6 @@ public class Composition {
         tank.dmg = 200;
         tank.type = "tank";
 
-
-//       System.out.println("tank armor: " + tank.getArmor());
-//       System.out.println("tank hpPoints: " + tank.getHpPoints());
-//       System.out.println("tank damage: " + tank.getDmg());
-
-
         healer.armor = 100;
         healer.hpPoints = 600;
         healer.dmg = 200;
@@ -43,15 +32,11 @@ public class Composition {
         dps.hpPoints = 400;
         dps.dmg = 500;
         dps.type = "dps";
+
         methods.showStats(healer);
         methods.showStats(dps);
         methods.showStats(tank);
 
-        try {
-            File CharNameFile = new File("CharName.txt");
-            Scanner inventoryScanner = new Scanner(CharNameFile);
-        } catch(FileNotFoundException) {
-            Logger.getLogger()
-        }
+
     }
 }
