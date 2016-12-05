@@ -3,12 +3,15 @@ package classes;
 /**
  * Created by nicoleta.timis on 15/11/16.
  */
-public class Hero {
+public abstract class Hero {
     public  int armor;
     public int hpPoints;
     public String type;
     public int dmg;
 
+    public Hero(){
+
+    }
 //    public int getDmg() {
 //        return dmg;
 //    }

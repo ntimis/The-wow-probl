@@ -5,6 +5,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.lang.Object;
 import java.util.Scanner;
+import java.util.Random;
+import java.lang.String;
 
 /**
  * Created by nicoleta.timis on 18/11/16.
@@ -16,8 +18,9 @@ public class Utils {
     }
 
     private static final String FILE_PATH = "src/CharNames.txt";
-    public void arrayName(){
-        String[] filearray;
+
+    public static String[] arrayName() {
+        String[] filearray = new String[30];
         File file = new File(FILE_PATH);
         System.out.println("File path: " + file.getAbsolutePath());
         System.out.println("file exists: " + file.exists());
@@ -32,11 +35,24 @@ public class Utils {
             String line = scan.nextLine();
             System.out.println(line);
             filearray = line.split(" ");
-            for(int i=0; i<filearray.length; i++) {
-                System.out.println(filearray[i]);
-            }
         }
+        return filearray;
+    }
 
+
+    public static String[] randNames(String[] array) {
+        log("TEST RAND");
+        String random = (array[new Random().nextInt(array.length)]);
+        log(random);
+        log("\n");
+        for (int i = 0; i < array.length; i++) {
+            if (array[i].equals(random)) {
+                array[i] = null;
+                array[i] = array[1];
+            }
+            log(array[i]);
+        }
+        return array;
     }
 }
 

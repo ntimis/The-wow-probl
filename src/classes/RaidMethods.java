@@ -41,10 +41,6 @@ public class RaidMethods {
         }
 
 
-
-
-
-
     public void assesRaidSize(int raidSize) {
         boolean valid = false;
         do {

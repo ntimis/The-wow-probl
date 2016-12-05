@@ -2,8 +2,8 @@
  * Created by nicoleta.timis on 15/11/16.
  */
 
-import classes.Hero;
-import classes.RaidMethods;
+import classes.*;
+
 import java.util.Scanner;
 
 public class Composition {
@@ -15,9 +15,9 @@ public class Composition {
         int raidSize = Integer.parseInt((scanner.next()));
         methods.assesRaidSize(raidSize);
 
-        Hero tank = new Hero();
-        Hero healer = new Hero();
-        Hero dps = new Hero();
+        Hero tank = new DeathKnight();
+        Hero healer = new Druid();
+        Hero dps = new Mage();
         tank.armor = 300;
         tank.hpPoints = 1000;
         tank.dmg = 200;
@@ -37,6 +37,7 @@ public class Composition {
         methods.showStats(dps);
         methods.showStats(tank);
 
-
+//        Utils.arrayName();
+        Utils.randNames(Utils.arrayName());
     }
 }
