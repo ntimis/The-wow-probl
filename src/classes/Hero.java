@@ -8,6 +8,7 @@ public abstract class Hero {
     public int hpPoints;
     public String type;
     public int dmg;
+    public String name;
 
     public Hero(){
 
@@ -37,5 +38,4 @@ public abstract class Hero {
 
 
 }
-
 

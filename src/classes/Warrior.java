@@ -4,6 +4,9 @@ package classes;
  * Created by nicoleta.timis on 16/11/16.
  */
 public class Warrior extends Hero{
+public Warrior(){
+    type = "tank";
+}
         public double Pummel(){
           return (10 * dmg)/100;
         }

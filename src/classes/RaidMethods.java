@@ -12,6 +12,11 @@ import static classes.Utils.log;
  */
 public class RaidMethods {
     Scanner scanner = new Scanner(System.in);
+    private int tankNr;
+    private int healerNr;
+    private int dpsNr;
+    int basedmg;
+
 //    Utils utils = new Utils();
 
     public void askRaidSize() {
@@ -20,17 +25,19 @@ public class RaidMethods {
 
     public void calculateRaidSize(int raidSize) {
         log("Calculating raid size for your selection:");
-        int tankNr = 1;
+         tankNr = 1;
         if (raidSize > 5) {
             tankNr = 2;
         }
         log("number of tanks is: " + tankNr);
-        int healerNr = raidSize / 5;
+         healerNr = raidSize / 5;
         log("number of healers is: " + healerNr);
-        int dpsNr = raidSize - tankNr - healerNr;
+         dpsNr = raidSize - tankNr - healerNr;
         log("number of dps is: " + dpsNr);
         log("\n");
         String[] raidComposition = new String[raidSize];
+
+
         for (int i = 0; i < raidSize; i++) {
             if (i < tankNr)
                 raidComposition[i] = "tank";
@@ -40,6 +47,10 @@ public class RaidMethods {
         }
         }
 
+        public void raidDmg(Hero tank, Hero healer, Hero dps){
+            basedmg = ( tank.dmg * tankNr + healer.dmg * healerNr + dps.dmg * dpsNr);
+            log("raid dmg: " + basedmg);
+        }
 
     public void assesRaidSize(int raidSize) {
         boolean valid = false;
@@ -57,6 +68,17 @@ public class RaidMethods {
         while (!valid);
     }
 
+    public void chooseBoss(Boss boss, int raidSize){
+        if(raidSize == 5){log("You're fighting Kutulu ");
+        log("Boss armor: " + boss.armor);
+        log("Boss hpPoints: " + boss.hpPoints);
+        log("Boss damage: "+ boss.dmg);}
+        else if(raidSize == 10){}
+        else if(raidSize == 25){}
+        else if(raidSize ==30) {}
+    }
+
+
     public void showStats(Hero hero) {
         log(hero.type + " armor: " + hero.armor);
         log(hero.type +" hpPoints: " + hero.hpPoints);
@@ -65,11 +87,8 @@ public class RaidMethods {
 
     }
 
-//    public void raidCompositionArray(int raidSize){
-//        String[] raidComposition = new String[raidSize];
-//        for(int i=0; i< calculateRaidSize(raidSize).tankNr; i++){
-//            raidComposition[0] = "tank";
-//        }
+
+
 
     }
 

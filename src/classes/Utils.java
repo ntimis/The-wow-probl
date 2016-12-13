@@ -7,6 +7,7 @@ import java.lang.Object;
 import java.util.Scanner;
 import java.util.Random;
 import java.lang.String;
+import java.util.ArrayList;
 
 /**
  * Created by nicoleta.timis on 18/11/16.
@@ -40,20 +41,20 @@ public class Utils {
     }
 
 
-    public static String[] randNames(String[] array) {
-        log("TEST RAND");
-        String random = (array[new Random().nextInt(array.length)]);
-        log(random);
-        log("\n");
-        for (int i = 0; i < array.length; i++) {
-            if (array[i].equals(random)) {
-                array[i] = null;
-                array[i] = array[1];
-            }
-            log(array[i]);
+    public static String[] randNames(String[] array,int nr) {
+        log("Random geneerated list of name for your raid");
+        for(int i=1; i<=nr; i++) {
+            int randNr =new Random().nextInt(array.length - i);
+            String randomElement = (array[randNr]);
+            String aux = array[array.length - i];
+            array[array.length - i] = randomElement;
+            array[randNr] = aux;
+            log(randomElement);
+
         }
         return array;
     }
+
 }
 
 
