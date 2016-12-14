@@ -5,7 +5,11 @@ package classes;
  */
 public class Paladin extends Hero {
     public Paladin(){
-        type = "tank";
+
+        super.armor = 170;
+        hpPoints = 650;
+        dmg = 500;
+        type = "dps";
     }
     public double Devastate(){
         return (15 * dmg)/100;

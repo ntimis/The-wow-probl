@@ -49,8 +49,6 @@ public class Utils {
             String aux = array[array.length - i];
             array[array.length - i] = randomElement;
             array[randNr] = aux;
-            log(randomElement);
-
         }
         return array;
     }

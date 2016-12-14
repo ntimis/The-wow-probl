@@ -5,6 +5,9 @@ package classes;
  */
 public class Warrior extends Hero{
 public Warrior(){
+    super.armor = 230;
+    hpPoints = 9500;
+    dmg = 220;
     type = "tank";
 }
         public double Pummel(){
