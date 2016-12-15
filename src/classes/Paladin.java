@@ -10,12 +10,26 @@ public class Paladin extends Hero {
         hpPoints = 650;
         dmg = 500;
         type = "dps";
+        spells = new String[]{"Devastate", "SacredShield"};
     }
-    public double Devastate(){
-        return (15 * dmg)/100;
+    public double devastate(){
+        double spellDmg = dmg +(dmg/15);
+        Utils.log(spellDmg);
+        return spellDmg;
     }
 
-    public double SacredShield(){
-        return (13 * dmg)/100;
+    public double sacredShield(){
+        double spellDmg = dmg +(dmg/13);
+        Utils.log(spellDmg);
+        return spellDmg;
     }
-}
+    @Override
+    public void castSpell(String spellName){
+        if(spellName.equalsIgnoreCase("devastate")){
+            devastate();
+        }
+        else if(spellName.equalsIgnoreCase("sacredShield")) {
+            sacredShield();
+        }
+
+}}

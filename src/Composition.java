@@ -35,5 +35,6 @@ public class Composition {
 
         methods.assignNames(raidSize, Utils.randNames(Utils.arrayName(), raidSize));
         methods.heroStats(raidSize);
+        methods.heroSpell(raidSize);
     }
 }

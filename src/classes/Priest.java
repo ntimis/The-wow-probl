@@ -9,12 +9,28 @@ public class Priest extends Hero {
         hpPoints = 550;
         dmg = 200;
         type = "healer";
+        spells = new String[]{"FlashHeal", "GreaterHeal"};
     }
-    public double FlashHeal(){
-        return (20 * hpPoints)/100;
+    public double flashHeal(){
+        double spellHeal = hpPoints +(hpPoints/20);
+        Utils.log(spellHeal);
+        return spellHeal;
+
     }
 
-    public double GreaterHeal() {
-        return (30 * hpPoints) / 100;
+    public double greaterHeal() {
+        double spellHeal = hpPoints +(hpPoints/30);
+        Utils.log(spellHeal);
+        return spellHeal;
     }
+
+    @Override
+    public void castSpell(String spellName){
+        if(spellName.equalsIgnoreCase("flashHeal")){
+            flashHeal();
+        }
+        else if(spellName.equalsIgnoreCase("greaterHeal")) {
+            greaterHeal();
+        }
+}
 }

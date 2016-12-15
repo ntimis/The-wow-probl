@@ -9,12 +9,27 @@ public class DeathKnight extends Hero {
         hpPoints = 1000;
         dmg = 200;
         type = "tank";
+        spells = new String[]{"DeathGrip", "FrostTouch"};
     }
-    public double DeathGrip(){
+    public double deathGrip(){
+
+        Utils.log((13 * dmg)/100);
         return (13 * dmg)/100;
     }
 
-    public double FrostTouch(){
+    public double frostTouch(){
+        Utils.log((15 * dmg)/100);
         return (15 * dmg)/100;
+    }
+
+    @Override
+    public void castSpell(String spellName){
+        if(spellName.equalsIgnoreCase("deathGrip")){
+            deathGrip();
+        }
+        else if(spellName.equalsIgnoreCase("frostTouch")) {
+            frostTouch();
+        }
+
     }
 }

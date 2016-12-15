@@ -44,12 +44,14 @@ public class Utils {
     public static String[] randNames(String[] array,int nr) {
         log("Random geneerated list of name for your raid");
         for(int i=1; i<=nr; i++) {
-            int randNr =new Random().nextInt(array.length - i);
+            int randNr =new Random().nextInt(array.length-i);
+            log(array[randNr]);
             String randomElement = (array[randNr]);
             String aux = array[array.length - i];
             array[array.length - i] = randomElement;
             array[randNr] = aux;
         }
+        log("new arr");
         return array;
     }
 

@@ -9,15 +9,28 @@ public class Mage extends Hero {
         hpPoints = 450;
         dmg = 500;
         type = "dps";
-
+        spells = new String[]{"Frostbolt", "Firebolt"};
     }
-    public double Frostbolt(){
-        return (25 * dmg)/100;
-    }
-
-    public double Firebolt(){
-        return (30 * dmg)/100;
+    public double frostbolt(){
+        double spellDmg = dmg +(dmg/25);
+        Utils.log(spellDmg);
+        return spellDmg;
     }
 
+    public double firebolt(){
+        double spellDmg = dmg +(dmg/30);
+        Utils.log(spellDmg);
+        return spellDmg;
+    }
+    @Override
+    public void castSpell(String spellName){
+        if(spellName.equalsIgnoreCase("frostbolt")){
+            frostbolt();
+        }
+        else if(spellName.equalsIgnoreCase("firebolt")) {
+            firebolt();
+        }
+
+    }
 
 }

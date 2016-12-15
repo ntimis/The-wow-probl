@@ -9,13 +9,29 @@ public Warrior(){
     hpPoints = 9500;
     dmg = 220;
     type = "tank";
+    spells = new String[]{"Pummel", "FuriousSlash"};
 }
-        public double Pummel(){
-          return (10 * dmg)/100;
+        public double pummel(){
+            double spellDmg = dmg+(dmg/10);
+            Utils.log("dmg " + spellDmg);
+            return spellDmg;
         }
 
-    public double FuriousSlash(){
-        return (15 * dmg)/100;
+    public double furiousSlash(){
+        double spellDmg = dmg +(dmg/15);
+        Utils.log("dmg" + spellDmg);
+        return spellDmg;
+    }
+
+    @Override
+    public void castSpell(String spellName){
+        if(spellName.equalsIgnoreCase("Pummel")){
+            pummel();
+        }
+        else if(spellName.equalsIgnoreCase("FuriousSlash")) {
+            furiousSlash();
+        }
+
     }
 }
 

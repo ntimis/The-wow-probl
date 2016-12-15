@@ -9,12 +9,27 @@ public class Hunter extends Hero {
         hpPoints = 550;
         dmg = 450;
         type = "dps";
+        spells = new String[]{"PoisonArrow", "DeadlyArrow"};
     }
-    public double PoisonArrow(){
-        return (20 * dmg)/100;
+    public double poisonArrow(){
+        double spellDmg = dmg +(dmg/20);
+        Utils.log(spellDmg);
+        return spellDmg;
     }
 
-    public double DeadlyArrow(){
-        return (30 * dmg)/100;
+    public double deadlyArrow(){
+        double spellDmg = dmg +(dmg/30);
+        Utils.log(spellDmg);
+        return spellDmg;
+    }
+    @Override
+    public void castSpell(String spellName){
+        if(spellName.equalsIgnoreCase("poisonArrow")){
+            poisonArrow();
+        }
+        else if(spellName.equalsIgnoreCase("deadlyArrow")) {
+            deadlyArrow();
+        }
+
     }
 }

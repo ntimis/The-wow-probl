@@ -1,5 +1,7 @@
 package classes;
 
+import java.util.EmptyStackException;
+
 /**
  * Created by nicoleta.timis on 15/11/16.
  */
@@ -8,9 +10,17 @@ public abstract class Hero {
     public int hpPoints;
     public String type;
     public int dmg;
+
     public String name;
 
+    public String[] spells;
+
     public Hero(){
+
+    }
+
+    public void castSpell(String spellName) {
+            throw new EmptyStackException();
 
     }
 //    public int getDmg() {

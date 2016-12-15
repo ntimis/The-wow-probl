@@ -9,12 +9,26 @@ public class Druid extends Hero {
         hpPoints = 550;
         dmg = 200;
         type = "healer";
+        spells = new String[]{"HealingTouch", "Regrowth"};
     }
-    public double HealingTouch(){
-        return (20 * hpPoints)/100;
+    public double healingTouch(){
+        double spellHeal = hpPoints +(hpPoints/30);
+        Utils.log(spellHeal);
+        return spellHeal;
     }
 
-    public double Regrowth(){
-        return (30 * hpPoints)/100;
+    public double regrowth(){
+        double spellHeal = hpPoints +(hpPoints/50);
+        Utils.log(spellHeal);
+        return spellHeal;
     }
+    @Override
+    public void castSpell(String spellName){
+        if(spellName.equalsIgnoreCase("healingTouch")){
+            healingTouch();
+        }
+        else if(spellName.equalsIgnoreCase("regrowth")) {
+            regrowth();
+        }
+}
 }
